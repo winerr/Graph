@@ -17,13 +17,15 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
             nodes = new ArrayList<>();
             nodes.add(e);
         }else{
-            if ( e.getIn().size() != nodes.size()+1 && e.getOut().size() != nodes.size()+1 )
-                return false;
-            int index = 0;
             for (Node node: nodes){
-                node.addIn(e.getOutByIndex(index));
-                node.addOut(e.getInByIndex(index));
-                index++;
+                //check if node is in e.list input communications
+                if (e.hasInByIndex(node.getIndex()))
+                    //add e index in the output communications list of node
+                    node.addOut(e.getIndex());
+                //check if node is in e.list output communications
+                else if (e.hasOutByIndex(node.getIndex()))
+                    //add e index in the input communications list of node
+                    node.addIn(e.getIndex());
             }
             nodes.add(e);
         }
@@ -55,6 +57,22 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     public List<Node> findRoute(int start, int finish) {
         return null;
     }
+
+    @Override
+	public String toString() {
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < nodes.size(); i++) {
+			result.append("  " + i);
+		}
+		for (int i = 0; i < nodes.size(); i++) {
+			result.append("\n");
+			result.append(i);
+			for (int k = 0; k < nodes.get(i).getIn().size(); k++) {
+				result.append(nodes.get(i).getIn().get(k));
+			}
+		}
+		return result.toString();
+	}
 
     public int size() {
         return nodes.size();
