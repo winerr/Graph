@@ -51,7 +51,7 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     }
 
     public Node get(int index) {
-    	if(index >= nodes.si)
+//    	if(index >= nodes.si)
         return nodes.get(index);
     }
 
