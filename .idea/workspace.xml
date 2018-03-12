@@ -100,7 +100,7 @@
             <state relative-caret-position="-5508">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1520890771173" expanded="true" signature="63621:63638" ph="..." />
+                <marker date="1520890839208" expanded="true" signature="63608:63625" ph="..." />
               </folding>
             </state>
           </provider>
@@ -682,11 +682,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520890806902</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed add method in GraphImpl.java">
+      <created>1520890842940</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1520890842940</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7595000" />
+    <option name="totallyTimeSpent" value="7600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
