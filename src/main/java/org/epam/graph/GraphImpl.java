@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.*;
 
 
-//this is ny commit
 public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable {
 
     private List<Node> nodes;
@@ -51,10 +50,11 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     }
 
     public Node get(int index) {
+    	if(index >= nodes.si)
         return nodes.get(index);
     }
 
-    public List<Node> findRoute(int start, int finish) {
+    public List<Node> findShortestPath(int start, int finish) {
         return null;
     }
 
@@ -147,5 +147,15 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     @Override
     public int indexOf(Object o) {
         return nodes.indexOf(o);
+    }
+    
+    @Override
+    public GraphImpl clone(){
+    	 try {
+    	      return (GraphImpl)super.clone();
+    	    }
+    	    catch(CloneNotSupportedException ex ) {
+    	      throw new InternalError();
+    	    }
     }
 }
