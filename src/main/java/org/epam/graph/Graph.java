@@ -36,7 +36,7 @@ public interface Graph extends Collection<Node> {
      * @param finish last item on list
      * @return
      */
-    List<Node> findRoute(int start, int finish);
+    List<Node> findShortestPath(int start, int finish);
 
     /**
      * Returns the index of the first occurrence of the specified element
