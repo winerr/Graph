@@ -16,11 +16,15 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
             nodes = new ArrayList<>();
             nodes.add(e);
         }else{
-            int index = 0;
             for (Node node: nodes){
-                node.addIn(e.getInByIndex(index));
-                node.addOut(e.getOutByIndex(index));
-                index++;
+                //check if node is in e.list input communications
+                if (e.hasInByIndex(node.getIndex()))
+                    //add e index in the output communications list of node
+                    node.addOut(e.getIndex());
+                //check if node is in e.list output communications
+                else if (e.hasOutByIndex(node.getIndex()))
+                    //add e index in the input communications list of node
+                    node.addIn(e.getIndex());
             }
             nodes.add(e);
         }
@@ -50,7 +54,7 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
         return nodes.get(index);
     }
 
-    public List<Node> findRoute(int start, int finish) {
+    public List<Node> findShortestPath(int start, int finish) {
         return null;
     }
 
