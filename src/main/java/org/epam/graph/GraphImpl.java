@@ -3,66 +3,68 @@ package org.epam.graph;
 import java.io.Serializable;
 import java.util.*;
 
-
 public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable {
 
-    private List<Node> nodes;
+	private List<Node> nodes;
 
-    public GraphImpl() {
-    }
+	public GraphImpl() {
+	}
 
-    public boolean add(Node e) {
-        if(nodes == null){
-            nodes = new ArrayList<>();
-            nodes.add(e);
-        }else{
-            for(int i=0; i<nodes.size(); i++){
-                nodes.get(i).addOut(e.getInByIndex(i));
-                nodes.get(i).addIn(e.getOutByIndex(i));
-            }
-            nodes.add(e);
-        }
-        return true;
-    }
+	public boolean add(Node e) {
+		if (nodes == null) {
+			nodes = new ArrayList<>();
+			nodes.add(e);
+		} else if (e.getIn().size() != nodes.size() + 1 || e.getOut().size() != nodes.size() + 1
+				|| e.getIn().get(e.getIn().size() - 1) != 0 || e.getOut().get(e.getOut().size() - 1) != 0) {
+			return false;
+		} else {
+			for (int i = 0; i < nodes.size(); i++) {
+				nodes.get(i).addOut(e.getInByIndex(i));
+				nodes.get(i).addIn(e.getOutByIndex(i));
+			}
+			nodes.add(e);
+		}
+		return true;
+	}
 
-    public boolean remove(Object o) {
-        return remove(indexOf(o));
-    }
+	public boolean remove(Object o) {
+		return remove(indexOf(o));
+	}
 
-    @Override
-    public boolean remove(int index) {
-        if(index>=nodes.size()){
-        	return false;
-        }else{
-        	nodes.remove(index);
-        	for(Node node : nodes){
-        		node.removeIn(index);
-        		node.removeOut(index);
-        	}
-        	return true;
-        }
-    }
+	@Override
+	public boolean remove(int index) {
+		if (index >= nodes.size()) {
+			return false;
+		} else {
+			nodes.remove(index);
+			for (Node node : nodes) {
+				node.removeIn(index);
+				node.removeOut(index);
+			}
+			return true;
+		}
+	}
 
-    public Node get(int index) {
-    	if(index >= nodes.size())
-    	    return null;
-    	return nodes.get(index);
-    }
+	public Node get(int index) {
+		if (index >= nodes.size())
+			return null;
+		return nodes.get(index);
+	}
 
-    public List<Node> findShortestPath(int start, int finish) {
-        return null;
-    }
+	public List<Node> findShortestPath(int start, int finish) {
+		return null;
+	}
 
-    @Override
+	@Override
 	public String toString() {
 		StringBuilder result = new StringBuilder();
 		result.append(" ");
 		for (int i = 0; i < nodes.size(); i++) {
-			result.append(" " + (i+1));
+			result.append(" " + (i + 1));
 		}
 		for (int i = 0; i < nodes.size(); i++) {
 			result.append("\n");
-			result.append((i+1));
+			result.append((i + 1));
 			for (int k = 0; k < nodes.get(i).getIn().size(); k++) {
 				result.append(" ").append(nodes.get(i).getIn().get(k));
 			}
@@ -70,88 +72,87 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
 		return result.toString();
 	}
 
-    public int size() {
-        return nodes.size();
-    }
+	public int size() {
+		return nodes.size();
+	}
 
-    public boolean isEmpty() {
-        return size() == 0;
-    }
+	public boolean isEmpty() {
+		return size() == 0;
+	}
 
-    public Iterator<Node> iterator() {
-        return nodes.iterator();
-    }
+	public Iterator<Node> iterator() {
+		return nodes.iterator();
+	}
 
-    public Object[] toArray() {
-        return nodes.toArray();
-    }
+	public Object[] toArray() {
+		return nodes.toArray();
+	}
 
-    public <T> T[] toArray(T[] a) {
-        return nodes.toArray(a);
-    }
+	public <T> T[] toArray(T[] a) {
+		return nodes.toArray(a);
+	}
 
-    public boolean contains(Object o) {
-        return nodes.contains(o);
-    }
+	public boolean contains(Object o) {
+		return nodes.contains(o);
+	}
 
-    public boolean containsAll(Collection<?> c) {
-        return nodes.containsAll(c);
-    }
+	public boolean containsAll(Collection<?> c) {
+		return nodes.containsAll(c);
+	}
 
-    public boolean addAll(Collection<? extends Node> c) {
-        boolean modified = false;
-        for (Node node : c)
-            if (add(node))
-                modified = true;
-        return modified;
-    }
+	public boolean addAll(Collection<? extends Node> c) {
+		boolean modified = false;
+		for (Node node : c)
+			if (add(node))
+				modified = true;
+		return modified;
+	}
 
-    public boolean removeAll(Collection<?> c) {
-        Objects.requireNonNull(c);
-        boolean modified = false;
-        Iterator<?> it = iterator();
-        while (it.hasNext()) {
-            if (c.contains(it.next())) {
-                it.remove();
-                modified = true;
-            }
-        }
-        return modified;
-    }
+	public boolean removeAll(Collection<?> c) {
+		Objects.requireNonNull(c);
+		boolean modified = false;
+		Iterator<?> it = iterator();
+		while (it.hasNext()) {
+			if (c.contains(it.next())) {
+				it.remove();
+				modified = true;
+			}
+		}
+		return modified;
+	}
 
-    public boolean retainAll(Collection<?> c) {
-        Objects.requireNonNull(c);
-        boolean modified = false;
-        Iterator<Node> it = iterator();
-        while (it.hasNext()) {
-            if (!c.contains(it.next())) {
-                it.remove();
-                modified = true;
-            }
-        }
-        return modified;
-    }
+	public boolean retainAll(Collection<?> c) {
+		Objects.requireNonNull(c);
+		boolean modified = false;
+		Iterator<Node> it = iterator();
+		while (it.hasNext()) {
+			if (!c.contains(it.next())) {
+				it.remove();
+				modified = true;
+			}
+		}
+		return modified;
+	}
 
-    public void clear() {
-        Iterator<Node> it = iterator();
-        while (it.hasNext()) {
-            it.next();
-            it.remove();
-        }
-    }
+	public void clear() {
+		Iterator<Node> it = iterator();
+		while (it.hasNext()) {
+			it.next();
+			it.remove();
+		}
+	}
 
-    @Override
-    public int indexOf(Object o) {
-        return nodes.indexOf(o);
-    }
-    
-    @Override
-    public GraphImpl clone(){
-    	 try {
-    	      return (GraphImpl)super.clone();
-    	    }
-    	    catch(CloneNotSupportedException ex ) {
-    	      throw new InternalError();
-    	    }
-    }
+	@Override
+	public int indexOf(Object o) {
+		return nodes.indexOf(o);
+	}
+
+	@Override
+	public GraphImpl clone() {
+		try {
+			return (GraphImpl) super.clone();
+		} catch (CloneNotSupportedException ex) {
+			throw new InternalError();
+		}
+	}
 }
