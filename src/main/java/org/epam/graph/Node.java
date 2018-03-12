@@ -6,6 +6,7 @@ public class Node {
     List<Integer> in;
     List<Integer> out;
 
+
     /**
      * Конструктор для заповнення звязків вузла
      * @param in індекси вузлів які мають шляхи до вузла

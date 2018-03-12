@@ -34,4 +34,6 @@ public abstract class AbstractGraph implements Graph {
     public abstract boolean retainAll(Collection<?> c);
 
     public abstract void clear();
+
+    public abstract int indexOf(Object o);
 }

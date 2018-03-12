@@ -18,7 +18,7 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     }
 
     public boolean remove(Object o) {
-        return false;
+        return remove(indexOf(o));
     }
 
     @Override
@@ -55,11 +55,11 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     }
 
     public boolean contains(Object o) {
-        return false;
+        return nodes.contains(o);
     }
 
     public boolean containsAll(Collection<?> c) {
-        return false;
+        return nodes.containsAll(c);
     }
 
     public boolean addAll(Collection<? extends Node> c) {
@@ -102,5 +102,10 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
             it.next();
             it.remove();
         }
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return nodes.indexOf(o);
     }
 }
