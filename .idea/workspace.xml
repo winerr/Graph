@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="88c16b58-1135-4e8b-84d9-e9e2cf44fe4b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/epam/graph/AbstractGraph.java" afterPath="$PROJECT_DIR$/src/main/java/org/epam/graph/AbstractGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/epam/graph/Graph.java" afterPath="$PROJECT_DIR$/src/main/java/org/epam/graph/Graph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/epam/graph/GraphImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/epam/graph/GraphImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -523,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520886816028</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test push, renamed the findShortestPath method">
+      <created>1520888192722</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520888192722</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -531,7 +535,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1058" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -597,7 +601,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="addIn and addOut methods" />
     <MESSAGE value="change add methods, add index to Node.class and some other methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="change add methods, add index to Node.class and some other methods" />
+    <MESSAGE value="test push, renamed the findShortestPath method" />
+    <option name="LAST_COMMIT_MESSAGE" value="test push, renamed the findShortestPath method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
