@@ -63,4 +63,20 @@ public class Node {
     public int getIndex() {
         return index;
     }
+
+    public List<Integer> getIn() {
+        return in;
+    }
+
+    public void setIn(List<Integer> in) {
+        this.in = in;
+    }
+
+    public List<Integer> getOut() {
+        return out;
+    }
+
+    public void setOut(List<Integer> out) {
+        this.out = out;
+    }
 }
