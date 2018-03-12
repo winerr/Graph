@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88c16b58-1135-4e8b-84d9-e9e2cf44fe4b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/graph/AbstractGraph.java" afterPath="$PROJECT_DIR$/src/main/java/org/epam/graph/AbstractGraph.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/graph/Graph.java" afterPath="$PROJECT_DIR$/src/main/java/org/epam/graph/Graph.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/graph/GraphImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/epam/graph/GraphImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/graph/Main.java" afterPath="$PROJECT_DIR$/src/main/java/org/epam/graph/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/graph/Node.java" afterPath="$PROJECT_DIR$/src/main/java/org/epam/graph/Node.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,22 +17,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GraphImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GraphImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/epam/graph/GraphImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
-                <element signature="e#411#412#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-                <element signature="e#534#535#0" expanded="true" />
+                <element signature="e#466#467#0" expanded="true" />
+                <element signature="e#507#508#0" expanded="true" />
+                <element signature="e#561#562#0" expanded="true" />
+                <element signature="e#589#590#0" expanded="true" />
                 <element signature="method#addAll#0;class#GraphImpl#0" expanded="false" />
                 <element signature="method#removeAll#0;class#GraphImpl#0" expanded="false" />
                 <element signature="method#retainAll#0;class#GraphImpl#0" expanded="false" />
                 <element signature="method#clear#0;class#GraphImpl#0" expanded="false" />
-                <element signature="e#2335#2336#0" expanded="true" />
-                <element signature="e#2374#2375#0" expanded="true" />
+                <element signature="e#2390#2391#0" expanded="true" />
+                <element signature="e#2429#2430#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,12 +58,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/epam/graph/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="68">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding>
+                <element signature="e#455#456#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#566#567#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,10 +169,10 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/epam/graph/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/epam/graph/Node.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/epam/graph/GraphImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/epam/graph/AbstractGraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/epam/graph/Graph.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/epam/graph/Node.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/epam/graph/GraphImpl.java" />
       </list>
     </option>
   </component>
@@ -369,12 +372,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520875931440</updated>
-      <workItem from="1520875932944" duration="5604000" />
+      <workItem from="1520875932944" duration="6143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5604000" />
+    <option name="totallyTimeSpent" value="6143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -493,14 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/epam/graph/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -563,19 +558,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/epam/graph/GraphImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
             <element signature="method#addAll#0;class#GraphImpl#0" expanded="false" />
             <element signature="method#removeAll#0;class#GraphImpl#0" expanded="false" />
             <element signature="method#retainAll#0;class#GraphImpl#0" expanded="false" />
             <element signature="method#clear#0;class#GraphImpl#0" expanded="false" />
-            <element signature="e#2335#2336#0" expanded="true" />
-            <element signature="e#2374#2375#0" expanded="true" />
+            <element signature="e#2390#2391#0" expanded="true" />
+            <element signature="e#2429#2430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/epam/graph/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
           </folding>
         </state>
       </provider>

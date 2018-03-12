@@ -1,10 +1,7 @@
 package org.epam.graph;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 //this is ny commit
 public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable {
@@ -15,6 +12,14 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     }
 
     public boolean add(Node e) {
+        if(nodes == null){
+            nodes = new ArrayList<>();
+            nodes.add(e);
+        }else{
+
+        }
+
+
         return false;
     }
 

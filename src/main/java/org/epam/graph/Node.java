@@ -16,4 +16,12 @@ public class Node {
         this.in = in;
         this.out = out;
     }
+
+    public boolean addIn(int index){
+        return in.add(index);
+    }
+
+    public boolean addOut(int index){
+        return in.add(index);
+    }
 }
