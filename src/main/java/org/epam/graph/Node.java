@@ -5,6 +5,9 @@ import java.util.List;
 public class Node {
     private List<Integer> in;
     private List<Integer> out;
+    //for increment index
+    private int index;
+    private static int count = 0;
 
 
     /**
@@ -15,6 +18,7 @@ public class Node {
     public Node(List<Integer> in, List<Integer> out) {
         this.in = in;
         this.out = out;
+        index = ++count;
     }
 
     public boolean addIn(int index){
@@ -40,5 +44,21 @@ public class Node {
 
     public int getOutByIndex(int index){
         return out.get(index);
+    }
+
+
+    //чи існує індекс в списку вхідних зв'язків
+    public boolean hasInByIndex(int index){
+        return in.contains(index);
+    }
+
+    //чи існує індекс в списку вихідних зв'язків
+    public boolean hasOutByIndex(int index){
+        return out.contains(index);
+    }
+
+    //return current instance index
+    public int getIndex() {
+        return index;
     }
 }
