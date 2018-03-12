@@ -16,7 +16,8 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
         if(nodes == null){
             nodes = new ArrayList<>();
             nodes.add(e);
-        }else{
+        }
+        else{
             for (Node node: nodes){
                 //check if node is in e.list input communications
                 if (e.hasInByIndex(node.getIndex()))
@@ -29,7 +30,7 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
             }
             nodes.add(e);
         }
-        return false;
+        return true;
     }
 
     public boolean remove(Object o) {
