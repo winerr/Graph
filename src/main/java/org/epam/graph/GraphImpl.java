@@ -17,10 +17,12 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
             nodes = new ArrayList<>();
             nodes.add(e);
         }else{
+            if ( e.getIn().size() != nodes.size()+1 && e.getOut().size() != nodes.size()+1 )
+                return false;
             int index = 0;
             for (Node node: nodes){
-                node.addIn(e.getInByIndex(index));
-                node.addOut(e.getOutByIndex(index));
+                node.addIn(e.getOutByIndex(index));
+                node.addOut(e.getInByIndex(index));
                 index++;
             }
             nodes.add(e);

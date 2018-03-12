@@ -1,5 +1,8 @@
 package org.epam.graph;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Node {
@@ -12,9 +15,11 @@ public class Node {
      * @param in індекси вузлів які мають шляхи до вузла
      * @param out індекси вузлів до яких йдуть шляхи від конкретного вузла
      */
-    public Node(List<Integer> in, List<Integer> out) {
-        this.in = in;
-        this.out = out;
+    public Node(Integer[] in, Integer[] out) {
+        this.in = new ArrayList<>();
+        Collections.addAll(this.in,  in);
+        this.out = new ArrayList<>();
+        Collections.addAll(this.out,  out);
     }
 
     public boolean addIn(int index){
@@ -22,7 +27,7 @@ public class Node {
     }
 
     public boolean addOut(int index){
-        return in.add(index);
+        return out.add(index);
     }
 
     public boolean removeIn(int index){
@@ -40,5 +45,13 @@ public class Node {
 
     public int getOutByIndex(int index){
         return out.get(index);
+    }
+
+    public List<Integer> getIn() {
+        return in;
+    }
+
+    public List<Integer> getOut() {
+        return out;
     }
 }
