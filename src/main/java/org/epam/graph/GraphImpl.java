@@ -7,6 +7,8 @@ import java.util.*;
 public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable {
 
     private List<Node> nodes;
+    private int size = 0;
+
 
     public GraphImpl() {
     }
@@ -15,20 +17,21 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
         if(nodes == null){
             nodes = new ArrayList<>();
             nodes.add(e);
+            size = 1;
+            return true;
         }else{
-            for (Node node: nodes){
-                //check if node is in e.list input communications
-                if (e.hasInByIndex(node.getIndex()))
-                    //add e index in the output communications list of node
-                    node.addOut(e.getIndex());
-                //check if node is in e.list output communications
-                else if (e.hasOutByIndex(node.getIndex()))
-                    //add e index in the input communications list of node
-                    node.addIn(e.getIndex());
+
+            for(int i=0; i<size; i++){
+                nodes.get(i).addOut(e.getInByIndex(i));
+
+                nodes.get(i).addIn(e.getOutByIndex(i));
             }
+
+            size++;
             nodes.add(e);
+
+            return true;
         }
-        return false;
     }
 
     public boolean remove(Object o) {
@@ -50,8 +53,9 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     }
 
     public Node get(int index) {
-    	if(index >= nodes.si)
-        return nodes.get(index);
+    	if(index >= nodes.size())
+    	    return null;
+    	return nodes.get(index);
     }
 
     public List<Node> findShortestPath(int start, int finish) {
@@ -75,7 +79,7 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
 	}
 
     public int size() {
-        return nodes.size();
+        return size;
     }
 
     public boolean isEmpty() {

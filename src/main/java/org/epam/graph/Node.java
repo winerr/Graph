@@ -7,8 +7,8 @@ public class Node {
     private List<Integer> in;
     private List<Integer> out;
     //for increment index
-    private int index;
-    private static int count = 0;
+    //private int index;
+    //private static int count = 0;
 
 
     /**
@@ -20,7 +20,7 @@ public class Node {
     public Node(List<Integer> in, List<Integer> out) {
         this.in = in;
         this.out = out;
-        index = ++count;
+        //index = ++count;
     }
 
     public boolean addIn(int index) {
@@ -28,7 +28,7 @@ public class Node {
     }
 
     public boolean addOut(int index) {
-        return in.add(index);
+        return out.add(index);
     }
 
     public boolean removeIn(int index) {
@@ -60,9 +60,9 @@ public class Node {
     }
 
     //return current instance index
-    public int getIndex() {
-        return index;
-    }
+//    public int getIndex() {
+//        return index;
+//    }
 
     public List<Integer> getIn() {
         return in;
