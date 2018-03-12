@@ -58,6 +58,22 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
         return null;
     }
 
+    @Override
+	public String toString() {
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < nodes.size(); i++) {
+			result.append("  " + i);
+		}
+		for (int i = 0; i < nodes.size(); i++) {
+			result.append("\n");
+			result.append(i);
+			for (int k = 0; k < nodes.get(i).getIn().size(); k++) {
+				result.append(nodes.get(i).getIn().get(k));
+			}
+		}
+		return result.toString();
+	}
+    
     public int size() {
         return nodes.size();
     }
