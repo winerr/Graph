@@ -7,8 +7,6 @@ import java.util.*;
 public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable {
 
     private List<Node> nodes;
-    private int size = 0;
-
 
     public GraphImpl() {
     }
@@ -17,19 +15,14 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
         if(nodes == null){
             nodes = new ArrayList<>();
             nodes.add(e);
-            size = 1;
-            return true;
         }else{
-
-            for(int i=0; i<size; i++){
+            for(int i=0; i<nodes.size(); i++){
                 nodes.get(i).addOut(e.getInByIndex(i));
                 nodes.get(i).addIn(e.getOutByIndex(i));
             }
-            size++;
             nodes.add(e);
-
-            return true;
         }
+        return true;
     }
 
     public boolean remove(Object o) {
@@ -78,7 +71,7 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
 	}
 
     public int size() {
-        return size;
+        return nodes.size();
     }
 
     public boolean isEmpty() {
