@@ -54,7 +54,7 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
         return nodes.get(index);
     }
 
-    public List<Node> findRoute(int start, int finish) {
+    public List<Node> findShortestPath(int start, int finish) {
         return null;
     }
 
