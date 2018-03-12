@@ -1,13 +1,17 @@
 package org.epam.graph;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public abstract class AbstractGraph implements Graph {
     public abstract Node get(int index);
 
     public abstract List<Node> findRoute(int start, int finish);
+
+    public abstract boolean add(Node e);
+
+    public abstract boolean remove(Object o);
+
+    public abstract boolean remove(int index);
 
     public abstract int size();
 
@@ -20,10 +24,6 @@ public abstract class AbstractGraph implements Graph {
     public abstract Object[] toArray();
 
     public abstract <T> T[] toArray(T[] a);
-
-    public abstract boolean add(Node e);
-
-    public abstract boolean remove(Object o);
 
     public abstract boolean containsAll(Collection<?> c);
 

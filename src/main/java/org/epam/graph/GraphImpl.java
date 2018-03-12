@@ -21,6 +21,11 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
         return false;
     }
 
+    @Override
+    public boolean remove(int index) {
+        return false;
+    }
+
     public Node get(int index) {
         return nodes.get(index);
     }
@@ -38,7 +43,7 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
     }
 
     public Iterator<Node> iterator() {
-        return null;
+        return nodes.iterator();
     }
 
     public Object[] toArray() {
