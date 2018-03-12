@@ -24,4 +24,13 @@ public class Node {
     public boolean addOut(int index){
         return in.add(index);
     }
+    
+    public boolean removeIn(int index){
+    	return in.remove(in.get(index));
+    }
+    
+    public boolean removeOut(int index){
+    	return out.remove(out.get(index));
+    }
+    
 }
