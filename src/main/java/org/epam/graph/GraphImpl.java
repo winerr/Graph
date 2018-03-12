@@ -3,7 +3,6 @@ package org.epam.graph;
 import java.io.Serializable;
 import java.util.*;
 
-import ua.Node;
 
 //this is ny commit
 public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable {
@@ -18,10 +17,14 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
             nodes = new ArrayList<>();
             nodes.add(e);
         }else{
-
+            int index = 0;
+            for (Node node: nodes){
+                node.addIn(e.getInByIndex(index));
+                node.addOut(e.getOutByIndex(index));
+                index++;
+            }
+            nodes.add(e);
         }
-
-
         return false;
     }
 
