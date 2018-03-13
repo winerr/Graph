@@ -3,6 +3,7 @@ package org.epam.graph;
 import java.util.*;
 
 public abstract class AbstractGraph implements Graph {
+
     public abstract Node get(int index);
 
     public abstract List<Integer> findShortestPath(int start, int finish);

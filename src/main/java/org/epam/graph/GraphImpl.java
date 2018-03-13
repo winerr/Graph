@@ -3,7 +3,7 @@ package org.epam.graph;
 import java.io.Serializable;
 import java.util.*;
 
-public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable {
+public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable, Comparable<GraphImpl> {
 
 	private List<Node> nodes;
 
@@ -25,6 +25,30 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
 			nodes.add(e);
 		}
 		return true;
+	}
+
+	//join two graphs
+	//joiningRules has list of nodes with in list and out list of this (current graph) nodes
+	public GraphImpl join(GraphImpl graph, List<Node> joiningRules){
+		//add adjacency matrix of graph.nodes to this.nodes
+		for (Node node : graph.nodes) {
+			for (int i = this.nodes.size(); i < this.nodes.size() + graph.nodes.size(); i++) {
+				nodes.get(i).addOut(node.getInByIndex(i - this.nodes.size()));
+				nodes.get(i).addIn(node.getOutByIndex(i - this.nodes.size()));
+
+			}
+			nodes.add(node);
+		}
+		//add adjacency matrices from joining rules list
+		for (Node node : joiningRules) {
+			for (int i = this.nodes.size(); i < this.nodes.size() + graph.nodes.size(); i++) {
+				for (int j = 0; j < nodes.size(); j++) {
+					nodes.get(i).addOut(node.getInByIndex(j));
+					nodes.get(j).addIn(node.getOutByIndex(i));
+				}
+			}
+		}
+		return this;
 	}
 
 	public boolean remove(Object o) {
@@ -160,6 +184,22 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
 			return (GraphImpl) super.clone();
 		} catch (CloneNotSupportedException ex) {
 			throw new InternalError();
+		}
+	}
+
+	@Override
+	public int compareTo(GraphImpl graph) {
+		if (this.nodes.size() < graph.nodes.size())
+			return -1;
+		else if(this.nodes.size() > graph.nodes.size()){
+			return 1;
+		}
+		else{
+			int resultOfCompareNodes = -1;
+			for (int i = 0; i < this.nodes.size(); i ++){
+				resultOfCompareNodes = this.nodes.get(i).compareTo(graph.nodes.get(i));
+			}
+			return resultOfCompareNodes;
 		}
 	}
 }
