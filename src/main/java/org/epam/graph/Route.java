@@ -21,9 +21,8 @@ public class Route implements Comparable <Route> {
         this.graph = r.graph;
     }
 
-    /*
-    Returns the List of all final (from start index to end index) routes
-     */
+
+    //Returns the List of all final (from start index to end index) routes
     public List<Route> generateAllRoutes(int start, int end, Graph graph){
         Route firstRoute = new Route(graph);
         calculateFinalRoutes(firstRoute, start, end);
@@ -66,10 +65,6 @@ public class Route implements Comparable <Route> {
 
     public int getDistance (){
         return nodeIndexes.size();
-    }
-
-    public static List<Route> getAllRoutes() {
-        return allRoutes;
     }
 
     @Override
