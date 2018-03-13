@@ -16,13 +16,11 @@ public class Route implements Comparable <Route> {
 
     // constructor for creating a route based on another one (used for recursion purposes)
     public Route(Route r) {
-        this.nodeIndexes = new ArrayList<>();
         this.nodeIndexes.addAll(r.getNodes());
         this.graph = r.graph;
     }
 
-
-    //Returns the List of all final (from start index to end index) routes
+    //Returns the List of all final routes (from start index to end index)
     public List<Route> generateAllRoutes(int start, int end, Graph graph){
         Route firstRoute = new Route(graph);
         calculateFinalRoutes(firstRoute, start, end);
@@ -37,11 +35,14 @@ public class Route implements Comparable <Route> {
     Finalization is based on the calculation of transitional routes using recursion.
      */
     public void calculateFinalRoutes(Route oldRoute, int oldIndex, int endIndex){
+        //add the node to the route
         oldRoute.getNodes().add(oldIndex);
+        //add to the finalized routes if we found the endIndex
         if ( graph.getNodeByIndex(oldIndex).hasOutByIndex(endIndex)){
             oldRoute.getNodes().add(endIndex);
             allRoutes.add(oldRoute);
         }
+        //use recursion for each of the "out nodes" that are contained in the current node
         else if (!graph.getNodeByIndex(oldIndex).getOut().isEmpty()){
             for (Integer tempIndex : graph.getNodeByIndex(oldIndex).getOut()){
                 System.out.println("hi");
