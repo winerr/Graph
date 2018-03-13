@@ -5,7 +5,7 @@ import java.util.*;
 public abstract class AbstractGraph implements Graph {
     public abstract Node get(int index);
 
-    public abstract List<Node> findShortestPath(int start, int finish);
+    public abstract List<Integer> findShortestPath(int start, int finish);
 
     public abstract boolean add(Node e);
 
