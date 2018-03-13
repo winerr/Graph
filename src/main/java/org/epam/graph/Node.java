@@ -2,7 +2,7 @@ package org.epam.graph;
 
 import java.util.List;
 
-public class Node {
+public class Node implements Comparable<Node> {
 
     private List<Integer> in;
     private List<Integer> out;
@@ -78,5 +78,41 @@ public class Node {
 
     public void setOut(List<Integer> out) {
         this.out = out;
+    }
+
+    @Override
+    public int compareTo(Node node) {
+        int resultOfCompareNodes = 0;
+        //check if in lists and out lists of this node and compare node are less , more or equals
+        //if more -> this node are greater then compare node
+        if (this.in.size() > node.in.size() & this.out.size() > node.out.size())
+            resultOfCompareNodes = 1;
+
+        //if less -> this node are less then compare node
+        else if (this.in.size() < node.in.size() & this.out.size() < node.out.size())
+            resultOfCompareNodes = -1;
+        //if equals -> checking the in lists and out lists for equals
+        else if (this.in.size() == node.in.size() & this.out.size() == node.out.size()){
+            // if in lists and out lists are equals -> nodes are equals
+            if (compareList(this.in, node.in) == 0 & compareList(this.out, node.out) == 0)
+                resultOfCompareNodes = 0;
+            //else we can`t make any design about less or greater and return that this node a less then compare node
+            else
+                resultOfCompareNodes = -1;
+        }
+        else
+            resultOfCompareNodes = -1;
+        return resultOfCompareNodes;
+    }
+    private int compareList(List<Integer> list1, List<Integer> list2){
+        int resultOfCompareNodes = 0;
+        for (int i = 0; i < list1.size(); i++){
+            if (list1.get(i).intValue() == list2.get(i).intValue()){
+                resultOfCompareNodes = 0;
+            }
+            else
+                resultOfCompareNodes = -1;
+        }
+        return resultOfCompareNodes;
     }
 }

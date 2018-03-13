@@ -3,7 +3,7 @@ package org.epam.graph;
 import java.io.Serializable;
 import java.util.*;
 
-public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable {
+public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serializable, Comparable<GraphImpl> {
 
 	private List<Node> nodes;
 
@@ -184,6 +184,22 @@ public class GraphImpl extends AbstractGraph implements Graph, Cloneable, Serial
 			return (GraphImpl) super.clone();
 		} catch (CloneNotSupportedException ex) {
 			throw new InternalError();
+		}
+	}
+
+	@Override
+	public int compareTo(GraphImpl graph) {
+		if (this.nodes.size() < graph.nodes.size())
+			return -1;
+		else if(this.nodes.size() > graph.nodes.size()){
+			return 1;
+		}
+		else{
+			int resultOfCompareNodes = -1;
+			for (int i = 0; i < this.nodes.size(); i ++){
+				resultOfCompareNodes = this.nodes.get(i).compareTo(graph.nodes.get(i));
+			}
+			return resultOfCompareNodes;
 		}
 	}
 }
