@@ -45,7 +45,6 @@ public class Route implements Comparable <Route> {
         //use recursion for each of the "out nodes" that are contained in the current node
         else if (!graph.getNodeByIndex(oldIndex).getOut().isEmpty()){
             for (Integer tempIndex : graph.getNodeByIndex(oldIndex).getOut()){
-                System.out.println("hi");
                 Route temp = new Route(oldRoute);
                 calculateFinalRoutes(temp, tempIndex, endIndex);
             }
@@ -57,7 +56,10 @@ public class Route implements Comparable <Route> {
     If there are several routes with the same number of nodes, the method picks the first one
     */
     public Route findShortestRoute(List<Route> routes){
-        return Collections.min(routes);
+        if(!routes.isEmpty()){
+            return Collections.min(routes);
+        }
+        else return null;
     }
 
     public List<Integer> getNodes() {
