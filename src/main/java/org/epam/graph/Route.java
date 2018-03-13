@@ -38,13 +38,13 @@ public class Route implements Comparable <Route> {
         //add the node to the route
         oldRoute.getNodes().add(oldIndex);
         //add to the finalized routes if we found the endIndex
-        if ( graph.getNodeByIndex(oldIndex).hasOutByIndex(endIndex)){
+        if ( graph.get(oldIndex).hasOutByIndex(endIndex)){
             oldRoute.getNodes().add(endIndex);
             allRoutes.add(oldRoute);
         }
         //use recursion for each of the "out nodes" that are contained in the current node
-        else if (!graph.getNodeByIndex(oldIndex).getOut().isEmpty()){
-            for (Integer tempIndex : graph.getNodeByIndex(oldIndex).getOut()){
+        else if (!graph.get(oldIndex).isEdgeNode()){
+            for (Integer tempIndex : graph.get(oldIndex).getOut()){
                 Route temp = new Route(oldRoute);
                 calculateFinalRoutes(temp, tempIndex, endIndex);
             }

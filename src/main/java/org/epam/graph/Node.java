@@ -49,14 +49,40 @@ public class Node implements Comparable<Node> {
     }
 
 
+    //    //чи існує індекс в списку вхідних зв'язків
+//    public boolean hasInByIndex(int index) {
+//        return in.contains(index);
+//    }
+//
+//    //чи існує індекс в списку вихідних зв'язків
+//    public boolean hasOutByIndex(int index) {
+//        return out.contains(index);
+//    }
+
     //чи існує індекс в списку вхідних зв'язків
     public boolean hasInByIndex(int index) {
-        return in.contains(index);
+        if (in.get(index) == 1){
+            return true;
+        }
+        else return false;
     }
 
     //чи існує індекс в списку вихідних зв'язків
     public boolean hasOutByIndex(int index) {
-        return out.contains(index);
+        if (out.get(index) == 1){
+            return true;
+        }
+        else return false;
+    }
+
+    public boolean isEdgeNode (){
+        boolean result = true;
+        for (int i : getOut()){
+            if (i == 1){
+                result = false;
+            }
+        }
+        return result;
     }
 
     //return current instance index

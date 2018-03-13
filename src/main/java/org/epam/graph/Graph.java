@@ -16,15 +16,6 @@ public interface Graph extends Collection<Node> {
     Node get(int index);
 
     /**
-     * Returns the element of a specified node index in this list.
-     *
-     * @param index node index to return
-     * @return the node with a speified index in this list
-     * @throws IndexOutOfBoundsException if the index is out of range
-     *         (<tt>index &lt; 0 || index &gt;= size()</tt>)
-     */
-    Node getNodeByIndex(int index);
-    /**
      * Removes the element at the specified position in this list (optional
      * operation).  Shifts any subsequent elements to the left (subtracts one
      * from their indices).  Returns the element that was removed from the
@@ -42,10 +33,10 @@ public interface Graph extends Collection<Node> {
     /**
      * Returns a list of items that correspond to the shortest path
      * @param start first item on list
-     * @param finish last item on list
+     * @param end last item on list
      * @return
      */
-    List<Integer> findShortestPath(int start, int finish);
+    List<Integer> findShortestPath(int start, int end);
 
     /**
      * Returns the index of the first occurrence of the specified element
