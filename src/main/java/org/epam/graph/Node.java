@@ -106,13 +106,16 @@ public class Node implements Comparable<Node> {
     }
     private int compareList(List<Integer> list1, List<Integer> list2){
         int resultOfCompareNodes = 0;
+        int countEquals = 0;
         for (int i = 0; i < list1.size(); i++){
             if (list1.get(i).intValue() == list2.get(i).intValue()){
-                resultOfCompareNodes = 0;
+                countEquals ++;
             }
-            else
-                resultOfCompareNodes = -1;
         }
+        if (countEquals == list1.size())
+            resultOfCompareNodes = 0;
+        else
+            resultOfCompareNodes = -1;
         return resultOfCompareNodes;
     }
 }
